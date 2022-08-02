@@ -11,8 +11,8 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
-  currentClasses = {};
-  currentStyles = {};
+  // currentClasses = {};
+  // currentStyles = {};
 
   constructor() {}
 
@@ -27,10 +27,11 @@ export class UsersComponent implements OnInit {
           city: 'Boston',
           state: 'MA',
         },
-        image: 'http://placeimg.com/600/600/people/3',
+
         isActive: true,
-        balance: 100,
-        registered: new Date('01/02/2018 08:30:00')
+
+        registered: new Date('01/02/2018 08:30:00'),
+        hide: true
       },
       {
         firstName: 'Kevin',
@@ -41,10 +42,11 @@ export class UsersComponent implements OnInit {
           city: 'Lynn',
           state: 'MA',
         },
-        image: 'http://placeimg.com/600/600/people/2',
+
         isActive: false,
-        balance: 200,
-        registered: new Date('03/11/2017 06:20:00')
+
+        registered: new Date('03/11/2017 06:20:00'),
+        hide: true
       },
       {
         firstName: 'Karen',
@@ -55,41 +57,23 @@ export class UsersComponent implements OnInit {
           city: 'Miami',
           state: 'FL',
         },
-        image: 'http://placeimg.com/600/600/people/1',
+
         isActive: true,
-        balance: 50,
-        registered: new Date('11/02/2016 10:30:00')
+
+        registered: new Date('11/02/2016 10:30:00'),
+        hide: true
       },
     ];
 
     this.loaded = true;
 
-    // this.users = [];
-
-    // this.addUser({
-    //   firstName: 'David',
-    //   lastName: 'Jackson',
-    // });
-
-    this.setCurrentClasses();
-    this.setCurrentStyles();
   }
 
   addUser(user: User) {
     this.users.push(user);
   }
 
-  setCurrentClasses() {
-    this.currentClasses = {
-      'btn-success': this.enableAdd,
-      'big-text': this.showExtended,
-    };
-  }
-
-  setCurrentStyles() {
-    this.currentStyles = {
-      'padding-top': this.showExtended ? '0' : '40px',
-      'font-size': this.showExtended ? '' : '40px',
-    };
-  }
+  // toggleHide(user: User) {
+  //   user.hide = !user.hide;
+  // }
 }
